@@ -13,18 +13,18 @@ int main()
         scanf("%d", &arr[i]);
     }
 
-    k = k % z;   // ✅ fix: handle large k
+    k = k % z;   
     int a = z - k;
 
     int rot_arr[z];
 
     for (int i = 0; i < z; i++)
     {
-        rot_arr[i] = arr[(a + i) % z];   // ✅ fix: removed confusing if-else
+        rot_arr[i] = arr[(a + i) % z];    
     }
 
     int length = 1;
-    int prevlength = 1;   // ✅ fix: initialize properly
+    int prevlength = 1;    
 
     for (int i = 0; i < z - 1; i++)
     {
@@ -34,16 +34,16 @@ int main()
         }
         else
         {
-            if (length > prevlength)   // ✅ fix: track max properly
+            if (length > prevlength)    
                 prevlength = length;
             length = 1;
         }
     }
 
-    if (length > prevlength)   // ✅ fix: final check
+    if (length > prevlength)    
         prevlength = length;
 
-    printf("%d", prevlength);   // ✅ fix: single clean output
+    printf("%d", prevlength);  
 
     return 0;
 }
