@@ -1,0 +1,41 @@
+Asignment 1 question 2
+
+#include <stdio.h>
+
+int main()
+{
+    int arr[10];
+    printf("Enter 10 elements of array:\n");
+
+    for (int i = 0; i < 10; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    int sum = 0;
+    float average = 0;
+
+    // Calculate total sum first
+    for (int i = 0; i < 10; i++)
+    {
+        sum += arr[i];
+    }
+
+    average = sum / 10.0;
+
+    int greaterSum = 0;
+
+    // Sum of elements greater than average
+    for (int i = 0; i < 10; i++)
+    {
+        if (arr[i] > average)
+        {
+            greaterSum += arr[i];
+        }
+    }
+
+    printf("Average = %.2f\n", average);
+    printf("Sum of elements greater than average = %d\n", greaterSum);
+
+    return 0;
+}
